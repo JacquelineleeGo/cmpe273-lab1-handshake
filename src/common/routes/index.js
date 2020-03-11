@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect} from "react-router"; 
-import { BrowserRouter } from "react-router-dom";
+//import { BrowserRouter } from "react-router-dom";
 
 import UserPage from "../../pages/user";
 import HomePage from "../../pages/home";
@@ -10,7 +10,6 @@ import SearchPage from "../../pages/search";
 
 export default function SiteRoute(){
     return (
-        <BrowserRouter>
         <Switch>
             <Route path="/home">
             <HomePage />
@@ -29,6 +28,5 @@ export default function SiteRoute(){
             </Route>
             <Redirect to="/home"/>
         </Switch>
-        </BrowserRouter>
     );
 }
