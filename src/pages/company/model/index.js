@@ -76,5 +76,4 @@ const effects = {
     }
   }
 };
-
 export { actions, reducer, effects };

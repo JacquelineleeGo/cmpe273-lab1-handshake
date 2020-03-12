@@ -51,14 +51,14 @@ export default function Routes(props) {
           <Col span={8}>
             <Card title="Post Jobs" bordered={false}>
               <Button type="primary" shape="round">
-                <Link to="/company/post/add">Go</Link>
+              <Link to="/company/job/create">Go</Link>
               </Button>
             </Card>
           </Col>
           <Col span={8}>
             <Card title="Job Postings" bordered={false}>
               <Button type="primary" shape="round">
-                <Link to="/company/post">Go</Link>
+              <Link to="/company/job">Go</Link>
               </Button>
             </Card>
           </Col>
