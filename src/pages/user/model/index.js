@@ -90,7 +90,6 @@ const effects = {
       const result = await api.login(data);
       dispatch(asyncFinish());
       dispatch(loginSuccess(result));
-      // 看是否有 redirect 跳转到对应的页面，没有则跳转 /home
       const { location } = history;
       const { redirect } = qs.parse(location.search.slice(1));
       console.log("redirect:", redirect);
@@ -106,5 +105,4 @@ const effects = {
     }
   }
 };
-// 异步操作挂载到 effects 上
 export { actions, reducer, effects };
