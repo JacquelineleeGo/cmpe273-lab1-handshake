@@ -1,5 +1,5 @@
 export function getToken() {
-    return localStorage.getItem("handSharkToken");
+    return localStorage.getItem("handShakeToken");
 }
   
 export function delToken() {

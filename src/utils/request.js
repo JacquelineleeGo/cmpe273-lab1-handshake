@@ -24,7 +24,7 @@ fetchInstance.interceptors.response.use(
   response => {
     const { data } = response;
     if (data.token) {
-      localStorage.setItem("handSharkToken", data.token);
+      localStorage.setItem("handShakeToken", data.token);
     }
     if (data.error) {
       throw data.data;
