@@ -15,7 +15,7 @@ const Job = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // 查询公司下所有发布的公司
+
     if (id && job.list.length === 0) {
       dispatch(effects.queryJob(id));
     }
