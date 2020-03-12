@@ -4,6 +4,8 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 import BasicLayout from "../../layouts/BasicLayout";
 
 import ProfilePage from "./profile";
+import CreateProfilePage from "./profile/create";
+import EditProfilePage from "./profile/edit";
 import JobPage from "./job";
 
 export default function Routes() {
@@ -12,8 +14,14 @@ export default function Routes() {
   return (
     <BasicLayout>
       <Switch>
-        <Route path={`${path}/profile`}>
+        <Route exact path={`${path}/profile`}>
           <ProfilePage />
+        </Route>
+        <Route path={`${path}/profile/create`}>
+          <CreateProfilePage />
+        </Route>
+        <Route path={`${path}/profile/edit`}>
+          <EditProfilePage />
         </Route>
         <Route path={`${path}/job`}>
           <JobPage />
