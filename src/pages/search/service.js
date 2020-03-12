@@ -1,13 +1,12 @@
-import request from "../../../utils/request";
+import request from "../../utils/request";
+import qs from 'qs';
 
-export const queryProfile = id => {
-  return request.get(`/student/${id}`);
+export const queryJobs = (params) => {
+  return request.get(`/search?${qs.stringify(params)}`);
 };
 
-export const createProfile = (id, data) => {
-  return request.post(`/student/${id}`, data);
-};
-
-export const updateProfile = (id, data) => {
-  return request.put(`/student/${id}`, data);
+export const applyJob = (uid,jid) => {
+  return request.post(`/student/${uid}/job/${jid}/apply`, {
+    resume: "TBD"
+  });
 };

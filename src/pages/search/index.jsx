@@ -23,7 +23,7 @@ export default function SearchPage(props) {
   const handleApply = async record => {
     try {
       await api.applyJob(user.id, record.id);
-      message.success("申请成功");
+      message.success("Applied Successfully!");
     } catch (e) {
       console.error("e:", e);
     }

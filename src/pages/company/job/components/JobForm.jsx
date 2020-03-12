@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, InputNumber, Button } from "antd";
+import { Form, Input, Select, InputNumber, Button } from "antd";
 
 const formItemLayout = {
   labelCol: {
@@ -32,7 +32,7 @@ const tailFormItemLayout = {
   }
 };
 
-const ProfileForm = ({ onSubmit, initialValues = {} }) => {
+const JobForm = ({ onSubmit, initialValues = {} }) => {
   const [form] = Form.useForm();
 
   const onFinish = values => {
@@ -62,19 +62,24 @@ const ProfileForm = ({ onSubmit, initialValues = {} }) => {
         >
           <Input />
         </Form.Item>
-        <Form.Item
-          label="category"
-          name="category"
-          rules={[
-            {
-              required: true,
-              message: "Please input your category!",
-              whitespace: true
-            }
-          ]}
-        >
-          <Input />
+
+        <Form.Item label="Category" name="category"
+        rules={[
+          {
+            required: true,
+            message: "Please input your category!",
+            whitespace: true
+          }
+        ]}>
+        <Select>
+          <Select.Option value="full_time">Full-time</Select.Option>
+          <Select.Option value="part_time">Part-time</Select.Option>
+          <Select.Option value="intern">Intern</Select.Option>
+          <Select.Option value="on_campus">On-campus</Select.Option>
+
+        </Select>
         </Form.Item>
+    
         <Form.Item
           label="salary"
           name="salary"
@@ -115,7 +120,6 @@ const ProfileForm = ({ onSubmit, initialValues = {} }) => {
         >
           <Input />
         </Form.Item>
-
         <Form.Item
           label="application_deadline"
           name="application_deadline"
@@ -129,8 +133,6 @@ const ProfileForm = ({ onSubmit, initialValues = {} }) => {
         >
           <Input />
         </Form.Item>
-
-
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
             Submit
@@ -141,4 +143,4 @@ const ProfileForm = ({ onSubmit, initialValues = {} }) => {
   );
 };
 
-export default ProfileForm;
+export default JobForm;
