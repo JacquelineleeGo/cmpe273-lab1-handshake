@@ -10,7 +10,6 @@ import "./index.css";
 const { Content, Footer } = Layout;
 
 export default function BasicLayout(props) {
-  // 需要进行初始化操作，获取用户信息
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
 

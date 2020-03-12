@@ -105,7 +105,6 @@ const effects = {
       const result = await api.updateJob(jid, data);
       dispatch(updateOne(result));
       dispatch(asyncFinish());
-      // 返回简历页面
       dispatch(push("/company/job"));
     } catch (e) {
       dispatch(asyncError(e));
