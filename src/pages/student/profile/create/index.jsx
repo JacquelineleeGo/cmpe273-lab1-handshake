@@ -13,11 +13,27 @@ export default function() {
 
   const handleCreate = values => {
     dispatch(
-      effects.createProfile(id, {
-        basic: {
-          ...values.profileBasic
-        }
-      })
+        effects.createProfile(id, {
+            basic: {
+              ...values.profileBasic
+            },
+            education: {
+              college_name: "SJSU",
+              location: "San Jose",
+              degree: "Master",
+              major: "MSSE",
+              year_of_passing: "2020-6-20"
+            },
+            experience: [
+              {
+                company_name: "LinkedIn",
+                title: "sde intern",
+                location: "sunnyvale",
+                start_date: "2020-3-6",
+                end_date: "2020-12-12"
+              }
+            ]
+          })
     );
   };
 

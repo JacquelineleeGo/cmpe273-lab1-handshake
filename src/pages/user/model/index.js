@@ -44,7 +44,10 @@ const userSlice = createSlice({ // dispatch(asyncStart())
     initSuccess: (state, action) => ({
       ...state,
       ...action.payload
-    })
+    }),
+    clearUserInfo: (state) => {
+        return initialState;
+    }
   }
 });
 

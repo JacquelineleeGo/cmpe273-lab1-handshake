@@ -43,7 +43,7 @@ const effects = {
     dispatch(asyncStart());
     try {
       const result = await api.queryProfile(id);
-      dispatch(updateProfile(result.profile));
+      dispatch(updateProfile(result));
       dispatch(asyncFinish());
     } catch (e) {
       dispatch(asyncError(e));
@@ -54,7 +54,7 @@ const effects = {
     dispatch(asyncStart());
     try {
       const result = await api.createProfile(id, data);
-      dispatch(updateProfile(result.profile));
+      dispatch(updateProfile(result));
       dispatch(asyncFinish());
       dispatch(push("/student/profile"));
     } catch (e) {
@@ -66,7 +66,8 @@ const effects = {
     dispatch(asyncStart());
     try {
       const result = await api.updateProfile(id, data);
-      dispatch(updateProfile(result.profile));
+      console.log('result:', result);
+      dispatch(updateProfile(result));
       dispatch(asyncFinish());
       dispatch(push("/student/profile"));
     } catch (e) {

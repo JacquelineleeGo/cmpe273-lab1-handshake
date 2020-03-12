@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { message } from 'antd';
 
 import { effects } from "../../model";
 import ProfileForm from "../components/ProfileForm";
@@ -17,18 +18,27 @@ export default function() {
     }
   }, [dispatch, id, student.id]);
 
-  const handleUpdate = values => {
-    dispatch(
-      effects.updateProfile(id, {
-        basic: {
-          ...values.profileBasic
-        },
-        // TODO: 
-        education: student.profileEducation,
-        experience: student.profileExperience
-      })
-    );
-  };
+  const handleUpdate = async values => {
+    try {
+      // TODO: TBC
+      await dispatch(
+        effects.updateProfile(id, {
+          basic: {
+            ...values.profileBasic,
+            birth_date: "2020-3-6"
+          },
+          education: {
+            ...student.profileEducation,
+            year_of_passing: "2020-06-19",
+            created_at: "2020-03-11",
+            update_at: "2020-03-11"
+          },
+          experience: []
+        })
+      );
+      message.success("Successfully updated.");
+    } catch (e) {}
+  }
 
   if (student.loading) {
     return <div>loading...</div>;
