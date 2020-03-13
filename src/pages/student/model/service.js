@@ -11,3 +11,7 @@ export const createProfile = (id, data) => {
 export const updateProfile = (id, data) => {
   return request.put(`/student/${id}`, data);
 };
+
+export const queryApplications = uid => {
+  return request.get(`/student/${uid}/applications`);
+};

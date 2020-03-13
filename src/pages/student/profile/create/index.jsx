@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { effects } from "../../model";
 import ProfileForm from "../components/ProfileForm";
+//import EducationForm from "../components/EducationForm";
 
 export default function() {
   const { id  } = useSelector(state => ({
@@ -18,11 +19,12 @@ export default function() {
               ...values.profileBasic
             },
             education: {
-              college_name: "SJSU",
-              location: "San Jose",
+              college_name: "University of Hogwarts",
+              location: "Scottish Highlands",
               degree: "Master",
-              major: "MSSE",
+              major: "Software Engineering",
               year_of_passing: "2020-6-20"
+              
             },
             experience: [
               {
@@ -39,7 +41,7 @@ export default function() {
 
   return (
     <div>
-      <ProfileForm onSubmit={handleCreate} />
+      <ProfileForm onSubmit={handleCreate} />      
     </div>
   );
 }
