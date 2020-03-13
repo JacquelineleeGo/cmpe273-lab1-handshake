@@ -25,7 +25,7 @@ export default function() {
           ...values
         })
       );
-      message.success("更新成功");
+      message.success("Updated successfully");
     } catch (e) {}
   };
 

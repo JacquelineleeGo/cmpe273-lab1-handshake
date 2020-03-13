@@ -1,9 +1,10 @@
 import React from "react";
 import { Table, Divider } from "antd";
-
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 
 export default function(props) {
+  const user = useSelector(state => state.user);
   const columns = [
     {
       title: "Title",
@@ -37,11 +38,12 @@ export default function(props) {
         <span>
           <Link to={`/company/job/${record.id}`}>modify</Link>
           <Divider type="vertical" />
-          <Link to={`/company/application/${record.id}`}>applications</Link>
+          <Link to={`/company/${user.id}/job/${record.id}/applications`}>applications</Link>
         </span>
       )
     }
   ];
+
   return (
     <Table
       rowKey="id"
@@ -50,4 +52,4 @@ export default function(props) {
       pagination={false}
     />
   );
-}
+};

@@ -21,6 +21,7 @@ const Job = () => {
 
     const dispatch = useDispatch();
 
+    console.log("Hi");
     useEffect(() => {
     dispatch(effects.queryApplication(uid, jid));
     }, [dispatch, uid, jid]);
