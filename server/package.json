@@ -10,7 +10,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
-    "bcrypt": "^4.0.0",
+    "bcrypt": "^5.0.0",
     "bluebird": "^3.7.2",
     "body-parse": "^0.1.0",
     "bookshelf": "^1.1.0",
