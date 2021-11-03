@@ -24,7 +24,7 @@
     "lodash": "^4.17.15",
     "mocha": "^7.1.0",
     "mysql": "^2.18.1",
-    "validator": "^12.2.0"
+    "validator": "^13.7.0"
   },
   "name": "server",
   "version": "1.0.0",
